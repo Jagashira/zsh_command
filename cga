@@ -1,0 +1,21 @@
+#github change account
+#cga => change git account
+
+TESTSTR=$1
+if [ -z $TESTSTR ]; then
+  echo "enter user.name"
+  
+elif [ $TESTSTR = "<mainのgithub accountのuser.name>" ]; then #<>の中を編集する
+  git config --global user.name "" #main user.name
+  git config --global user.email "" #main user.email
+  echo "change github account => " #echoで変更を知らせる 私はuser.nameを入れた <>を編集
+
+elif [ $TESTSTR = "<subのgithub accountのuser.name>" ]; then #<>の中を編集する
+  git config --global user.name "" #sub user.name
+  git config --global user.email "" #sub user.email
+  echo "change github account => <user.name>" #echoで変更を知らせる 私はuser.nameを入れた <>を編集
+
+else
+  echo "enter correct user.name"
+
+fi
